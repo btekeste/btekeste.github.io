@@ -16,7 +16,7 @@ var cardPrevFigure = "";
 var movesCounter = 0;
 var star;
 var starRate = 0;
-var starPerMove = 5;
+var starPerMove = 8;
 var shuffleItems = [];
 
 /*
@@ -124,10 +124,10 @@ function countMoves() {
  */
 function starRating() {
 	star = document.querySelectorAll('.stars > li > i');
-	if (starPerMove <= 0 && starRate <= 4) {
+	if (starPerMove <= 0 && starRate <= 1) {
 		star[starRate].className = "fa fa-star-o";
 		starRate++;
-		starPerMove = 4;
+		starPerMove = 8;
 	}
 	starPerMove--;
 }
@@ -168,7 +168,6 @@ function shuffle(array) {
 var minutesLabel = document.getElementById("minutes");
 var secondsLabel = document.getElementById("seconds");
 var totalSeconds = 0;
-setInterval(setTime, 1000);
 
 function setTime() {
   ++totalSeconds;
